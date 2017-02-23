@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  DxFunc.cpp
+  DxFuncLib.cpp
+  Input.cpp
+LINK : warning LNK4068: /MACHINE の指定がありません。X86 を既定とします。
+  DxFuncLib.vcxproj -> D:\Documents\Visual Studio 2015\Projects\LibraryMaker\Release\DxFuncLib.lib
