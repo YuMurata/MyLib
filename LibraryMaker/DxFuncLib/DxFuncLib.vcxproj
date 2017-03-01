@@ -59,17 +59,29 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="DxLibDebug.props" />
+    <Import Project="..\..\..\PropertySeet\Template.props" />
+    <Import Project="..\..\..\PropertySeet\DxLib.props" />
+    <Import Project="..\PropertySeet\MyLib.props" />
+    <Import Project="..\..\..\PropertySeet\DebugMT.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="DxLibRelease.props" />
+    <Import Project="..\..\..\PropertySeet\Template.props" />
+    <Import Project="..\PropertySeet\MyLib.props" />
+    <Import Project="..\..\..\PropertySeet\DxLib.props" />
+    <Import Project="..\..\..\PropertySeet\ReleaseMT.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\PropertySeet\Template.props" />
+    <Import Project="..\PropertySeet\MyLib.props" />
+    <Import Project="..\..\..\PropertySeet\DxLib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\PropertySeet\Template.props" />
+    <Import Project="..\PropertySeet\MyLib.props" />
+    <Import Project="..\..\..\PropertySeet\DxLib.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -91,7 +103,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Documents\Visual Studio 2015\Program;D:\Documents\Visual Studio 2015\DxLib_VC\DxLibVCTest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -154,8 +166,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DXFunc.h" />
-    <ClInclude Include="DxFuncLib.h" />
+    <ClInclude Include="..\..\Include\DxLib\DxFunc.h" />
+    <ClInclude Include="BaseImage.h" />
+    <ClInclude Include="DXClass.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="ObjectIF.h" />
     <ClInclude Include="Resource.h" />
@@ -163,8 +176,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DxFunc.cpp" />
-    <ClCompile Include="DxFuncLib.cpp" />
+    <ClCompile Include="DxClass.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -12,7 +12,7 @@ protected:
 
 	std::vector<std::vector<std::string>> PreLoad(const std::string &file_name);
 
-	void PreWrite(const std::string &file_name, const std::vector<std::vector<std::string>> &data_list);
+	bool PreWrite(const std::string &file_name, const std::vector<std::vector<std::string>> &data_list);
 
 public:
 	FilerA(const char &delim = ',') 
@@ -29,7 +29,7 @@ protected:
 
 	std::vector<std::vector<std::wstring>> PreLoad(const std::wstring &file_name);
 
-	void PreWrite(const std::wstring &file_name, const std::vector<std::vector<std::wstring>> &data_list);
+	bool PreWrite(const std::wstring &file_name, const std::vector<std::vector<std::wstring>> &data_list);
 
 public:
 	FilerW(const wchar_t &delim = ',')

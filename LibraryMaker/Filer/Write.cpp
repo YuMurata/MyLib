@@ -7,10 +7,15 @@
 
 using namespace std;
 
-void FilerA::PreWrite(const string &file_name, const vector<vector<string>> &data_list)
+bool FilerA::PreWrite(const string &file_name, const vector<vector<string>> &data_list)
 {
 	ofstream ofs(file_name);
-	
+
+	if (!ofs)
+	{
+		return false;
+	}
+
 	auto func = [&](const vector<string> &input)
 	{
 		copy(begin(input), end(input), ostream_iterator<string>(ofs, string({ this->delim }).c_str()));
@@ -18,12 +23,19 @@ void FilerA::PreWrite(const string &file_name, const vector<vector<string>> &dat
 	};
 
 	for_each(begin(data_list), end(data_list), func);
+
+	return true;
 }
 
-void FilerW::PreWrite(const wstring &file_name, const vector<vector<wstring>> &data_list)
+bool FilerW::PreWrite(const wstring &file_name, const vector<vector<wstring>> &data_list)
 {
 	wofstream ofs(file_name);
 	
+	if (!ofs)
+	{
+		return false;
+	}
+
 	auto func = [&](const vector<wstring> &input)
 	{
 		copy(begin(input), end(input), ostream_iterator<wstring,wchar_t>(ofs, wstring({ this->delim }).c_str()));
@@ -31,4 +43,6 @@ void FilerW::PreWrite(const wstring &file_name, const vector<vector<wstring>> &d
 	};
 
 	for_each(begin(data_list), end(data_list), func);
+
+	return true;
 }

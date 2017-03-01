@@ -1,6 +1,7 @@
 ﻿C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (RandomerLib.vcxproj, RndomerLib.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  stdafx.cpp
-  Main.cpp
   Randomer.cpp
   コードを生成中...
-  RndomerLib.vcxproj -> D:\Documents\GitHub\Game\Oselo\Debug\Randomer.lib
+  コンパイル中...
+  Main.cpp
+  コードを生成中...
+  RndomerLib.vcxproj -> D:/Documents/GitHub/MyLib/LibraryMaker/Debug\Randomer.lib

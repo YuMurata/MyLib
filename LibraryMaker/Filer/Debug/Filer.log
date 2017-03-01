@@ -3,5 +3,4 @@
   Main.cpp
   Load.cpp
   コードを生成中...
-C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1357,5): warning MSB8012: TargetPath(D:\Documents\GitHub\Game\Oselo\Debug\Filer.lib) does not match the Library's OutputFile property value (D:\Documents\GitHub\MyLib\LibraryMaker\Debug\Filer.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
-  Filer.vcxproj -> D:\Documents\GitHub\Game\Oselo\Debug\Filer.lib
+  Filer.vcxproj -> D:\Documents\GitHub\MyLib\LibraryMaker\Debug\Filer.lib

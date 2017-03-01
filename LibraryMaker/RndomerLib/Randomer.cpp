@@ -9,3 +9,6 @@ Randomer::Randomer()
 	random_device rnd;
 	this->mt.seed(rnd());
 }
+
+
+std::mt19937 Randomer::mt;
