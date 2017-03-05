@@ -12,6 +12,7 @@
 #define IDM_EXIT				105
 #define IDI_DXFUNCLIB			107
 #define IDI_SMALL				108
+#define IDI_MAINICON			110
 #define IDC_DXFUNCLIB			109
 #define IDC_MYICON				2
 #ifndef IDC_STATIC

@@ -6,11 +6,11 @@
 class DxClass
 {
 public:
-	DxClass();
+	DxClass(const std::string &title="DxLib");
 
 	~DxClass();
 	
-	bool Init();
+	bool Init(const std::string &title);
 
 	bool MainLoop();
 

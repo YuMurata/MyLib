@@ -1,8 +1,6 @@
-#include"stdafx.h"
 #include"Filer.h"
-
+#include"StringPlus.h"
 #include<fstream>
-#include<sstream>
 
 using namespace std;
 
@@ -24,21 +22,7 @@ vector<vector<string>> FilerA::PreLoad(const string &file_name)
 
 		while (getline(ifs, line))
 		{
-			stringstream temp(line);
-
-			vector<string> words;
-			string word;
-			size_t word_num;
-
-			for (word_num = 0; getline(temp, word, this->delim); ++word_num);
-
-			temp.clear();
-			temp.seekg(0, ios::beg);
-
-			while (getline(temp, word, this->delim))
-			{
-				words.push_back(word);
-			}
+			auto words = SplitA(line, this->delim);
 
 			ret.push_back(words);
 		}
@@ -66,15 +50,7 @@ vector<vector<wstring>> FilerW::PreLoad(const wstring &file_name)
 
 		while (getline(ifs, line))
 		{
-			wstringstream temp(line);
-
-			vector<wstring> words;
-			wstring word;
-
-			while (getline(temp, word, this->delim))
-			{
-				words.push_back(word);
-			}
+			auto words = SplitW(line, this->delim);
 
 			ret.push_back(words);
 		}

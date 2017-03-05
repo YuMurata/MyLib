@@ -120,6 +120,13 @@ public://<=<=<=<=<=<=<=<=<=<=<=<=<=<=<=
 		stream << value.x << "," << value.y << ",";
 		return stream;
 	}
+
+
+	friend std::wostream& operator<<(std::wostream& stream, const TCoordinate<_T>& value)
+	{
+		stream << value.x << "," << value.y << ",";
+		return stream;
+	}
 	
 };
 

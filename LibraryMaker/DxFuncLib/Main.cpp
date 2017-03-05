@@ -3,6 +3,7 @@
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) 
 {
+	//SetOutApplicationLogValidFlag(FALSE);
 	DxClass obj;
 	
 	WaitKey();      // ÉLÅ[ì¸óÕë“Çø

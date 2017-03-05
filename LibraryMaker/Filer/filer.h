@@ -1,9 +1,7 @@
 #pragma once
-#include"stdafx.h"
 
 #include<vector>
 #include<string>
-#include<sstream>
 
 class FilerA
 {

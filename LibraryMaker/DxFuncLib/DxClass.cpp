@@ -1,15 +1,13 @@
-#include"stdafx.h"
-
 #include<DxLib.h>
 #include"DXClass.h"
-
+#include"Resource.h"
 #include<bitset>
 
 using namespace std;
 
-DxClass::DxClass()
+DxClass::DxClass(const std::string &title)
 {
-	this->Init();
+	this->Init(title);
 }
 
 DxClass::~DxClass()
@@ -17,45 +15,52 @@ DxClass::~DxClass()
 	DxLib_End();
 }
 
-	bool DxClass::Init()
+bool DxClass::Init(const std::string &title)
+{
+	enum
 	{
-		enum
-		{
-			CW,
-			DI,
-			SD,
-			NUM,
-		};
-		bitset<NUM> flag;
+		CW,
+		WI,
+		ALV,
+		WT,
+		DI,
+		SD,
+		NUM,
+	};
+	bitset<NUM> flag;
 
-		flag[CW] = ChangeWindowMode(TRUE) == 0;
-		flag[DI] = DxLib_Init() == 0;
-		flag[SD] = SetDrawScreen(DX_SCREEN_BACK) == 0;
-
-		return flag.all();
-	}
+	flag[CW] = ChangeWindowMode(TRUE) == 0;
+	flag[ALV] = SetOutApplicationLogValidFlag(FALSE) == 0;
+	flag[WI] = SetWindowIconID(IDI_MAINICON) == 0;
+	flag[WT] = SetWindowText(title.c_str()) == 0;
+	flag[DI] = DxLib_Init() == 0;
+	flag[SD] = SetDrawScreen(DX_SCREEN_BACK) == 0;
+	auto a = (bool)flag[ALV];
+	return flag.all();
+}
 
 	bool DxClass::MainLoop()
 	{
 		enum
 		{
+			SF,
 			PM,
+			CD,
 			NUM,
 		};
 		bitset<NUM> flag;
 
+
+		flag[SF]=ScreenFlip()==0;
 		flag[PM] = ProcessMessage() == 0;
+		flag[CD]=ClearDrawScreen()==0;
 
 		return flag.all();
 	}
 
 	bool DxClass::Draw(const unique_ptr<ObjectIF> &obj)
 	{
-		ClearDrawScreen();
-
 		obj->Draw();
-
-		ScreenFlip();
 
 		return true;
 	}

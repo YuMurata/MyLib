@@ -27,13 +27,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -169,6 +169,7 @@
     <ClInclude Include="..\..\Include\DxLib\DxFunc.h" />
     <ClInclude Include="BaseImage.h" />
     <ClInclude Include="DXClass.h" />
+    <ClInclude Include="ImageMGR.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="ObjectIF.h" />
     <ClInclude Include="Resource.h" />
@@ -190,8 +191,7 @@
     <ResourceCompile Include="DxFuncLib.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="DxFuncLib.ico" />
-    <Image Include="small.ico" />
+    <Image Include="MyIcon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
