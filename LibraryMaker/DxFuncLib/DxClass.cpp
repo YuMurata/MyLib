@@ -29,8 +29,8 @@ bool DxClass::Init(const std::string &title)
 	};
 	bitset<NUM> flag;
 
-	flag[CW] = ChangeWindowMode(TRUE) == 0;
 	flag[ALV] = SetOutApplicationLogValidFlag(FALSE) == 0;
+	flag[CW] = ChangeWindowMode(TRUE) == 0;
 	flag[WI] = SetWindowIconID(IDI_MAINICON) == 0;
 	flag[WT] = SetWindowText(title.c_str()) == 0;
 	flag[DI] = DxLib_Init() == 0;

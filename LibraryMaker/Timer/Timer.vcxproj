@@ -19,25 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7CA43497-1CEF-4101-B766-961DEFC3009A}</ProjectGuid>
+    <ProjectGuid>{28A13F1D-49E2-4AF4-8F68-2916A6BC3CEF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DxFuncLib</RootNamespace>
+    <RootNamespace>Timer</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>DxFunc</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -60,28 +59,24 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\PropertySeet\Template.props" />
-    <Import Project="..\..\..\PropertySeet\DxLib.props" />
-    <Import Project="..\PropertySeet\MyLib.props" />
     <Import Project="..\..\..\PropertySeet\DebugMT.props" />
+    <Import Project="..\PropertySeet\MyLib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\PropertySeet\Template.props" />
-    <Import Project="..\PropertySeet\MyLib.props" />
-    <Import Project="..\..\..\PropertySeet\DxLib.props" />
     <Import Project="..\..\..\PropertySeet\ReleaseMT.props" />
+    <Import Project="..\PropertySeet\MyLib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\PropertySeet\Template.props" />
     <Import Project="..\PropertySeet\MyLib.props" />
-    <Import Project="..\..\..\PropertySeet\DxLib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\PropertySeet\Template.props" />
     <Import Project="..\PropertySeet\MyLib.props" />
-    <Import Project="..\..\..\PropertySeet\DxLib.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -101,15 +96,12 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Documents\Visual Studio 2015\DxLib_VC\DxLibVCTest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -117,11 +109,11 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -132,17 +124,14 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Documents\Visual Studio 2015\Program;D:\Documents\Visual Studio 2015\DxLib_VC\DxLibVCTest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\Documents\Visual Studio 2015\DxLib_VC\DxLibVCTest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -152,46 +141,33 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\DxLib\DxFunc.h" />
-    <ClInclude Include="BaseImage.h" />
-    <ClInclude Include="DXClass.h" />
-    <ClInclude Include="ImageMGR.h" />
-    <ClInclude Include="input.h" />
-    <ClInclude Include="ObjectIF.h" />
-    <ClInclude Include="Resource.h" />
+    <ClInclude Include="..\..\Include\Timer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DxClass.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Input.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="DxFuncLib.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="MyIcon.ico" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
