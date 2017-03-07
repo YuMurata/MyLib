@@ -1,6 +1,7 @@
 #pragma once
 
-#include"ObjectIF.h"
+#include"SceneMGR.h"
+#include"input.h"
 #include<memory>
 
 class DxClass
@@ -14,7 +15,7 @@ public:
 
 	bool MainLoop();
 
-	bool Draw(const std::unique_ptr<ObjectIF> &obj);
+	bool Draw(const SceneMGR &scene);
 
-	bool UpDate(const std::unique_ptr<ObjectIF> &obj, Input *input);
+	bool UpDate(SceneMGR *scene, Input *input);
 };

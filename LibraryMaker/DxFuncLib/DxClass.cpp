@@ -58,17 +58,17 @@ bool DxClass::Init(const std::string &title)
 		return flag.all();
 	}
 
-	bool DxClass::Draw(const unique_ptr<ObjectIF> &obj)
+	bool DxClass::Draw(const SceneMGR &scene)
 	{
-		obj->Draw();
+		scene.Draw();
 
 		return true;
 	}
 
-	bool DxClass::UpDate(const unique_ptr<ObjectIF> &obj, Input *input)
+	bool DxClass::UpDate(SceneMGR *scene, Input *input)
 	{
 		input->UpDate();
-		obj->UpDate(*input);
+		scene->UpDate(*input);
 
 		return true;
 	}
