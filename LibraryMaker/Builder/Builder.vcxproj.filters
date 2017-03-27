@@ -33,6 +33,9 @@
     <ClInclude Include="..\..\Include\Builder.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="VUInitialize.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

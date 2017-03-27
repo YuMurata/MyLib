@@ -4,9 +4,13 @@
 #include "stdafx.h"
 #include"Builder.h"
 #include<iostream>
+#include<vector>
 #include<conio.h>
-
+#include<initializer_list>
+#include"VUInitialize.h"
 using namespace std;
+
+
 
 int main()
 {
@@ -15,7 +19,10 @@ int main()
 	public:
 		Base() :x(0), y(1) {}
 		int x, y;
-		virtual void Disp()=0;
+		virtual void Disp() 
+		{
+			cout << "b" << endl;
+		};
 	};
 
 	class X :public Base
@@ -28,20 +35,16 @@ int main()
 		void Disp() { cout << y << endl; }
 	};
 
-	Builder<Base> obj;
-	obj.Register<X>("X");
-	obj.Register<Y>("Y");
-
-	unique_ptr<Base> MyClass[2];
-	MyClass[0] = obj.Create("X");
-	MyClass[1] = obj.Create("Y");
-
+	auto temp = { make_unique<Base>(),make_unique<Base>() };
+	vector<unique_ptr<Base>> MyClass = VUInitialize<Base>(make_unique<X>(),make_unique<Y>());
+	//move(begin(temp), end(temp), back_inserter(MyClass));
 	for (auto &i : MyClass)
 	{
 		i->Disp();
 	}
 
 	_getch();
+
     return 0;
 }
 
