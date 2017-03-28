@@ -2,6 +2,7 @@
 #include<vector>
 #include<cassert>
 #include<numeric>
+#include<Eigen/Core>
 
 namespace MathPlus
 {
@@ -41,5 +42,12 @@ namespace MathPlus
 			auto ret = accumulate(begin(buff), end(buff), (T)0, func);
 			return ret;
 		}
+	}
+
+	template<typename T,typename Pred>
+	double Differential(const T &x, const Pred &f,const double &h=1e-3)
+	{
+		auto ret = (f(x+h) - f(x)) / h;
+		return ret;
 	}
 }

@@ -19,3 +19,4 @@ public:
 		return distribution(this->mt);
 	}
 };
+
