@@ -7,6 +7,6 @@
 
 int main()
 {
-	auto a = Split(L"1,2,3");
+	auto a = Split(L"1,2,3",',');
 	return 0;
 }

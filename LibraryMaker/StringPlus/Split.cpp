@@ -22,7 +22,10 @@ vector<wstring> SplitW(const wstring &str, const wchar_t &delim)
 	input.seekg(0, ios_base::beg);
 	while (getline(input, word, delim))
 	{
-		ret.push_back(word);
+		if (!word.empty())
+		{
+			ret.push_back(word);
+		}
 	}
 
 	return ret;
@@ -43,7 +46,10 @@ vector<string> SplitA(const string &str, const char &delim)
 	input.seekg(0, ios_base::beg);
 	while (getline(input, word, delim))
 	{
-		ret.push_back(word);
+		if (!word.empty())
+		{
+			ret.push_back(word);
+		}
 	}
 
 	return ret;

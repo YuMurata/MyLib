@@ -1,8 +1,8 @@
-#include"stdafx.h"
-
 #include"Randomer.h"
 
 using namespace std;
+
+mt19937 Randomer::mt;
 
 Randomer::Randomer()
 {
@@ -10,5 +10,3 @@ Randomer::Randomer()
 	this->mt.seed(rnd());
 }
 
-
-std::mt19937 Randomer::mt;

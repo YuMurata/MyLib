@@ -6,11 +6,13 @@
 class FilerA
 {
 protected:
+	using DataList = std::vector<std::vector<std::string>>;
+	
 	const char delim;
 
-	std::vector<std::vector<std::string>> PreLoad(const std::string &file_name);
+	DataList PreLoad(const std::string &file_name);
 
-	bool PreWrite(const std::string &file_name, const std::vector<std::vector<std::string>> &data_list);
+	bool PreWrite(const std::string &file_name, const DataList &data_list);
 
 public:
 	FilerA(const char &delim = ',') 
@@ -23,11 +25,13 @@ public:
 class FilerW
 {
 protected:
+	using DataList = std::vector<std::vector<std::wstring>>;
+
 	const wchar_t delim;
 
-	std::vector<std::vector<std::wstring>> PreLoad(const std::wstring &file_name);
+	DataList PreLoad(const std::wstring &file_name);
 
-	bool PreWrite(const std::wstring &file_name, const std::vector<std::vector<std::wstring>> &data_list);
+	bool PreWrite(const std::wstring &file_name, const DataList &data_list);
 
 public:
 	FilerW(const wchar_t &delim = ',')
